@@ -6,7 +6,7 @@ import java.awt.*;
 public class StartScreen extends JFrame {
 
     public StartScreen() {
-        super("Zamceno");
+        super("Find a Key");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(true);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -32,7 +32,7 @@ public class StartScreen extends JFrame {
         panel.setOpaque(false);
         panel.setPreferredSize(new Dimension(460, 400));
 
-        JLabel title = new JLabel("Najdi Klíč", SwingConstants.CENTER);
+        JLabel title = new JLabel("Find a Key", SwingConstants.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 54));
         title.setForeground(new Color(32, 147, 209));
         title.setBounds(0, 30, 460, 65);
@@ -51,7 +51,7 @@ public class StartScreen extends JFrame {
 
         JButton start = makeButton("Start Game", new Color(32, 147, 209));
         start.setBounds(130, 278, 200, 50);
-        start.addActionListener(e -> System.exit(0));
+        start.addActionListener(e -> {dispose(); new GameScreen(); });
         panel.add(start);
 
         JButton exit = makeButton("Exit", new Color(150, 35, 35));
